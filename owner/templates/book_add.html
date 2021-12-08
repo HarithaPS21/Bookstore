@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+<!--<h1>Book create</h1>-->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+<!--                {{form.as_p}}-->
+                {%for field in form%}
+                {%if field.errors%}
+                <div class="text-danger">
+                    {{field.errors}}
+                </div>
+                {%endif%}
+                  <div class="mb-2">
+
+                        {{field.label_tag}}
+                        {{field}}
+                  </div>
+                {%endfor%}
+<!--                cross site request forgery-->
+<!--                <div class="mb-3">-->
+<!--                    <label for="">bookname</label>-->
+<!--                    <input type="text" name="bookname" class="form-control">-->
+<!--                </div>-->
+
+<!--                <div class="mb-3">-->
+<!--                    <label for="">author</label>-->
+<!--                    <input type="text" name="author" class="form-control">-->
+<!--                </div>-->
+
+<!--                <div class="mb-3">-->
+<!--                    <label for="">price</label>-->
+<!--                    <input type="text" name="price" class="form-control">-->
+<!--                </div>-->
+
+<!--                <div class="mb-3">-->
+<!--                    <label for="">copies</label>-->
+<!--                    <input type="text" name="copies" class="form-control">-->
+<!--                </div>-->
+
+                <button type="submit" class="btn btn-success">Add Book</button>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+</body>
+</html>

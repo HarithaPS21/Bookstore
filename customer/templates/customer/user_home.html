@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%extends 'customer/base.html' %}
+
+{%block body_block%}
+<h1>Welcome {{request.user}}</h1>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {%if messages%}
+            {%for message in messages%}
+                {{message}}
+            {%endfor%}
+        {%endif%}
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    {%for book in books%}
+
+    <div class="col-4 mt-4">
+        <div class="card" style="width: 80%;">
+            <img src="{{book.image.url}}" alt="" style="height:300px;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Book name:{{book.book_name}}</li>
+                <li class="list-group-item">Author:{{book.author}}</li>
+                <li class="list-group-item">Price:{{book.price}}</li>
+                 <li class="list-group-item">Copies:{{book.copies}}</li>
+                <li class="list-group-item">
+                    <a href="{%url 'ordercreate' book.id %}" class="btn btn-success">Order This</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    {%endfor%}
+</div>
+{%endblock%}

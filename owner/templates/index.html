@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="">
+                {%csrf_token%}
+                <a href="{%url 'listbook' %}" class="btn btn-success">List Book</a>
+                <a href="{%url 'addbook' %}" class="btn btn-success">ADD Book</a>
+                <a href="{%url 'removebook' %}" class="btn btn-success">Remove Book</a>
+                <a href="{%url 'changebook' %}" class="btn btn-success">Change Book</a>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
